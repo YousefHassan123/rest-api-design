@@ -1,0 +1,9 @@
+### PUT Update Test
+
+PUT http://localhost:3000/api/items/1
+Content-Type: application/json
+
+{
+  "name": "Updated Item",
+  "price": 79.99
+}

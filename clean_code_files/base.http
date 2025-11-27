@@ -1,0 +1,13 @@
+### Base Endpoint Tests
+
+GET http://localhost:3000/api/items
+Accept: application/json
+
+###
+POST http://localhost:3000/api/items
+Content-Type: application/json
+
+{
+  "name": "Sample Item",
+  "price": 99.99
+}
