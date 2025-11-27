@@ -1,21 +1,51 @@
-# Intermediate Assignment
+### Intermediate Assignment
 
-# DELETE /guests
+### DELETE /guests
+# Endpoint under test:
+# DELETE http://localhost:3000/guests/{id}
 
-# Test for 201 response code
+############################################################
+### TEST: Should return 201 Created (successful deletion)
+############################################################
 
-#   Setup calls
+### Setup Calls
+# Example: Create a guest first to delete
+POST http://localhost:3000/guests
+Content-Type: application/json
 
-#   Tests calls
+{
+  "firstName": "Bob",
+  "lastName": "Smith",
+  "email": "bob@example.com"
+}
 
-# Test for 400 response code
+### Test Call
+DELETE http://localhost:3000/guests/1
 
-#   Setup Calls
+###
 
-#   Tests Calls
+############################################################
+### TEST: Should return 400 Bad Request
+### (invalid request)
+############################################################
 
-# Test for 404 response code
+### Setup Calls
+# Example: No setup needed if deleting with invalid ID format
 
-#   Setup calls
+### Test Call
+DELETE http://localhost:3000/guests/invalid-id
 
-#   Tests calls
+###
+
+############################################################
+### TEST: Should return 404 Not Found
+### (guest ID does not exist)
+############################################################
+
+### Setup Calls
+# Optional: Ensure ID 999 does not exist
+
+### Test Call
+DELETE http://localhost:3000/guests/999
+
+###
